@@ -1,7 +1,21 @@
 const products=document.getElementById("product-wrapper");
+let db=[
+    ["ჰეად ენდ შოლდერსი","12.4","./images/pc1.png"],
+    ["ნივეა","112.4"],
+    ["აჰავა","122.4"],
+    ["მესაუდა","42.4"],
+    ["ჰეად ენდ შოლდერსი","12.4"],
+    ["ნივეა","112.4"],
+    ["აჰავა","122.4"],
+    ["მესაუდა","42.4"],
+    ["ჰეად ენდ შოლდერსი","12.4"],
+    ["ნივეა","112.4"],
+    ["აჰავა","122.4"],
+    ["მესაუდა","42.4"],
 
+]
 let card= document.createElement("div")
-function addCard(name,price) {
+function addCard(name,price,sour) {
     let card= document.createElement("div");
     let cardHeader=document.createElement("div");
     let cardImg=document.createElement("div");
@@ -15,7 +29,7 @@ function addCard(name,price) {
     cardName.innerText=name;
     cardPrice.innerText=price;
     let img = document.createElement("img");
-    img.src = "./images/pc1.png";
+    img.src = sour;
     
    
     products.append(card)
@@ -27,10 +41,7 @@ function addCard(name,price) {
     
 
 }
-addCard("წამლის დასახელება","125.65 ₾");
-{/* <div class="product-card"> 
-            <div class="card-header"> </div>
-            <div class="card-img" > <img src="./images/pc1.png"  alt="product"> </div>  
-            <div class="card-name"> წამლის დასახელება  </div> 
-            <div class="card-price">   125.65 ₾ </div>
-          </div> */}
+for (let i=0; i<db.length; i++){
+    addCard(db[i][0],db[i][1],db[i][2]);
+}
+
