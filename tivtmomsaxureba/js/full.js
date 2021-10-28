@@ -45,4 +45,36 @@ for (let i=0; i<10; i++){
   cardToAdd.setAttribute("id",db[i][3])
 }
 
-console.log("asdsd")
+
+const prod=[];
+$(".card-to-add").on("click", function(){
+    // If the id is not already in the array, add it. If it is, remove it
+    // if (prod.indexOf(this.id) === -1 ) {
+    //     prod.push(this.id); 
+    let empy=document.querySelector(".taro-product-empty");
+    console.log (empy)
+    let imgWrap=document.createElement("div")
+    let name=document.createElement("div")
+    let img = document.createElement("img")
+    img.src=db[0][2]
+    let price=document.createElement("div")
+    if(this.id==db[0][3]){
+        price.innerText=db[0][1]
+    }
+    empy.append(imgWrap)
+    empy.append(name)
+    empy.append(price);
+    imgWrap.append(img)
+    
+    
+       console.log(this)
+    // } else { 
+    //     prod.splice(prod.indexOf(this.id),1); } 
+    //     console.log(prod)
+  
+   
+
+
+
+    });
+
