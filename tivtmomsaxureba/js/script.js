@@ -1,4 +1,5 @@
 const products=document.getElementById("product-wrapper");
+
 let db=[
     ["ჰეად ენდ შოლდერსი","12.4","./images/pc1.png",2555],
     ["ნივეა","112.4","./images/pc1.png",2],
@@ -71,3 +72,4 @@ $(".product-card").on("click", function(){
   
   console.log(ids)
 });
+

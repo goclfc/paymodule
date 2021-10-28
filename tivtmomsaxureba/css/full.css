@@ -1,0 +1,238 @@
+body {
+   background-color: #F2F4F7;
+}
+* {
+    box-sizing: border-box;
+}
+#fullWrapper {
+    width: 1080px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#fullHeader {
+    top: 0px;
+    left: 0px;
+    width: 1080px;
+    height: 182px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mainBtn {
+    width: 228px;
+    height: 86px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #FF5260;
+    border-radius: 24px;
+    opacity: 1;
+    margin-left: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+#searchBtn {
+    width: 228px;
+    height: 86px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #FF5260;
+    border-radius: 24px;
+    opacity: 1;
+    margin-right: 48px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+#logoBtn {
+    width: 312px;
+    height: 42px;
+}
+#logoBtn img {
+    width: 312px;
+    height: 42px;
+}
+.btnInner {
+    width: 64px;
+    height: 64px;
+    background: #FF5260 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 10px #9FA9BD33;
+    border-radius: 14px;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#searchBtn div {
+    right:  11px;
+}
+#mainBtn div {
+    left: 11px;
+}
+#mainBtn span { margin-left: 40px;}
+#searchBtn span {
+    margin-right: 50px;
+   font-weight: 300;
+}
+#section1 span {
+    
+    display: block;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font-size: 43px ;
+    letter-spacing: 0px;
+    color: #26292E;
+    opacity: 1;
+    margin: 20px 1px 20px -460.5px;
+    
+}
+
+#taro { width: 984px;
+    height: 972px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E5E9F2;
+    border-radius: 24px;
+    opacity: 1;
+}
+.taro-product-empty {
+    width: 155px;
+    height: 220px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px dashed #D0D9E6;
+    border-radius: 20px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.taro-product-empty span {
+    width: 120px;
+    height: 30px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: normal normal normal 12px/18px BPG Arial;
+    letter-spacing: 0px;
+    color: #D0D9E6;
+    opacity: 1;
+    font-size: 18px;
+
+}
+#taro_products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#taro_header {
+  
+    margin:13px 0px 13px 64px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0px;
+    color: #26292E;
+    opacity: 1;
+}
+#add_header span {
+    margin:13px 0px 13px 64px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: 0px;
+    color: #26292E;
+    opacity: 1;
+}
+
+.card-img-to-add {
+    width: 120px;
+    height: 120px;
+    background: #F2F4F7;
+    border-radius: 18px;
+    opacity: 1; 
+    margin: 18px;
+
+}
+.card-img-to-add img {
+    width: 120px;
+    height: 120px;
+   
+}
+.card-name-to-add {
+    width: 120px;
+    height: auto;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #26292E;
+    opacity: 1;
+}
+.card-price-to-add {
+    width: 43px;
+    height: auto;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font-size: 17px;
+    letter-spacing: 0px;
+    color: #26292E;
+    opacity: 1;
+
+}
+.damateba {
+    width: 120px;
+    height: 48px;
+    background: #FF5260 0% 0% no-repeat padding-box;
+    border: 1px solid #F03E4D;
+    border-radius: 8px;
+    opacity: 1;
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#taro_products_to_add {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 984px;
+    height:350px ;
+    overflow-x: scroll;
+    position: relative;
+    overflow-y: hidden;
+    
+    
+}
+.card-to-add {
+    width: 155px;
+    height: 280px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E5E9F2;
+    border-radius: 20px;
+    opacity: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 13px 10px 10px 64px;
+    position: relative;
+    
+
+}
