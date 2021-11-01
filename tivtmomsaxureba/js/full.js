@@ -71,6 +71,8 @@ $(".card-to-add").on("click", function(){
     empy.append(price);
     imgWrap.append(img)
     
+    empy.setAttribute("class","used-place")
+    imgWrap.setAttribute("class","imgWrap")
     
        console.log(this)
     } else { 

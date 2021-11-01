@@ -267,3 +267,23 @@ opacity: 1;
       display: flex;
       overflow-x: scroll;
   }
+  .used-place {
+      display: flex;
+      flex-direction: column;
+      width: 155px;
+height: 220px;
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #E5E9F2;
+border-radius: 20px;
+opacity: 1;
+  }
+  .imgWrap {
+    width: 155px;
+    height: 220px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E5E9F2;
+    border-radius: 20px;
+    opacity: 1;
+  }
