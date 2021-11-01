@@ -21,13 +21,16 @@ function available(name,price,sour) {
     let cardNameToAdd=document.createElement("div");
     let cardPriceToAdd=document.createElement("div");
     let damateba=document.createElement("div");
+    let span=document.createElement("span")
+   
+
     cardImgToAdd.setAttribute("class","card-img-to-add");
     cardNameToAdd.setAttribute("class","card-name-to-add");
     cardPriceToAdd.setAttribute("class","card-price-to-add");
     cardToAdd.setAttribute("class","card-to-add")
     damateba.setAttribute("class","damateba")
     cardNameToAdd.innerText=name;
-    cardPriceToAdd.innerText=price;
+    cardPriceToAdd.innerText=price +" ₾ ";
     damateba.innerHTML="დამატება";
     let img = document.createElement("img");
     img.src = sour;
@@ -37,6 +40,8 @@ function available(name,price,sour) {
     cardToAdd.append(cardPriceToAdd)
     cardToAdd.append(damateba)
     cardImgToAdd.append(img)
+    span.innerText="150.25 ₾"
+    cardPriceToAdd.append(span)
  
 
 }
@@ -49,8 +54,8 @@ for (let i=0; i<10; i++){
 const prod=[];
 $(".card-to-add").on("click", function(){
     // If the id is not already in the array, add it. If it is, remove it
-    // if (prod.indexOf(this.id) === -1 ) {
-    //     prod.push(this.id); 
+    if (prod.indexOf(this.id) === -1 ) {
+        prod.push(this.id); 
     let empy=document.querySelector(".taro-product-empty");
     console.log (empy)
     let imgWrap=document.createElement("div")
@@ -68,13 +73,48 @@ $(".card-to-add").on("click", function(){
     
     
        console.log(this)
-    // } else { 
-    //     prod.splice(prod.indexOf(this.id),1); } 
-    //     console.log(prod)
-  
-   
-
-
+    } else { 
+        prod.splice(prod.indexOf(this.id),1); } 
+        console.log(prod,"prod")
 
     });
+
+    
+
+
+    const deleted_products=document.getElementById("deleted_products")
+    function addCard(name,price,sour){
+        let card=document.createElement("div")
+        let cardHeader=document.createElement("div")
+        let cardImg=document.createElement("div")
+        let cardName=document.createElement("div")
+        let cardPrice=document.createElement("div")
+        let img = document.createElement("img");
+        img.src = sour;
+        card.setAttribute("class","card-to-add");
+        cardHeader.setAttribute("class","card-header-to-add");
+        cardImg.setAttribute("class","card-img-to-add");
+        cardName.setAttribute("class","card-name-to-add");
+        cardPrice.setAttribute("class","card-price-to-add");
+        cardName.innerText=name;
+        cardPrice.innerText=price;
+        img.src=sour;
+    
+        deleted_products.append(card)
+        card.append(cardHeader)
+        card.append(cardImg)
+
+        card.append(cardName)
+        card.append(cardPrice)
+        cardImg.append(img)
+
+
+
+
+
+
+    }
+    for(let i=0; i<10; i++){
+        addCard(db[i][0],db[i][1],db[i][2])
+    }
 

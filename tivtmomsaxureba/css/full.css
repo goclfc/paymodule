@@ -148,6 +148,9 @@ body {
     color: #26292E;
     opacity: 1;
 }
+#add_header {
+    margin-top: 20px;
+}
 #add_header span {
     margin:13px 0px 13px 64px;
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -156,6 +159,7 @@ body {
     letter-spacing: 0px;
     color: #26292E;
     opacity: 1;
+
 }
 
 .card-img-to-add {
@@ -177,20 +181,21 @@ body {
     height: auto;
     letter-spacing: var(--unnamed-character-spacing-0);
     text-align: left;
-    font-size: 18px;
+    font-size: 12px;
     letter-spacing: 0px;
     color: #26292E;
     opacity: 1;
 }
 .card-price-to-add {
-    width: 43px;
+    width: 120px;
     height: auto;
     letter-spacing: var(--unnamed-character-spacing-0);
     text-align: left;
-    font-size: 17px;
+    font-size: 14px;
     letter-spacing: 0px;
     color: #26292E;
     opacity: 1;
+    margin-top: 15px;
 
 }
 .damateba {
@@ -236,3 +241,29 @@ body {
     
 
 }
+.card-price-to-add span {
+    text-decoration: line-through;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/17px FiraGO;
+letter-spacing: var(--unnamed-character-spacing-0);
+text-align: left;
+font: normal normal normal 14px/17px FiraGO;
+letter-spacing: 0px;
+color: #B2B6D1;
+opacity: 1;
+  }
+  #deleted_products {
+    top: 1275px;
+    left: 48px;
+    width: 984px;
+    height: 408px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E5E9F2;
+    border-radius: 24px;
+    opacity: 1;
+    margin-top: 30px;
+  }
+  #deleted_products {
+      display: flex;
+      overflow-x: scroll;
+  }
