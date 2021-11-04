@@ -14,6 +14,16 @@ let db=[
     ["მესაუდა","42.4","./images/pc1.png",36],
 
 ]
+const dataBase=[
+    {id:2555,prodName:"ჰეად ენდ შოლდერსი", price:"12.50", sourse:"./images/pc1.png" },
+    {id:2556,prodName:"ჰეად1", price:"12.50", sourse:"./images/pc1.png" },
+    {id:2557,prodName:"ჰეად2 ენდ შოლდერსი2", price:"14.50", sourse:"./images/pc1.png" },
+   {id:2558, prodName:"ჰეად3 ენდ შოლდერსი", price:"11.50", sourse:"./images/pc1.png" },
+   {id:2559, prodName:"ჰეად4 ენდ შოლდერსი", price:"152.50", sourse:"./images/pc1.png" },
+    {id:2560,prodName:"ჰეად5 ენდ შოლდერსი", price:"12.5", sourse:"./images/pc1.png" },
+]
+console.log(dataBase)
+
 let cardToAdd;
 function available(name,price,sour) {
   cardToAdd=document.createElement("div");
@@ -45,43 +55,59 @@ function available(name,price,sour) {
  
 
 }
-for (let i=0; i<10; i++){
-  available (db[i][0],db[i][1],db[i][2]);
-  cardToAdd.setAttribute("id",db[i][3])
+for (let i=0; i<dataBase.length; i++){
+  available (dataBase[i].prodName,dataBase[i].price,dataBase[i].sourse);
+  cardToAdd.setAttribute("id",dataBase[i].id)
 }
+let newArray=[];
 
+let taroProducst=document.getElementById("taro_products")
 
 const prod=[];
 $(".card-to-add").on("click", function(){
     // If the id is not already in the array, add it. If it is, remove it
     if (prod.indexOf(this.id) === -1 ) {
         prod.push(this.id); 
-    let empy=document.querySelector(".taro-product-empty");
-    console.log (empy)
-    let imgWrap=document.createElement("div")
-    let name=document.createElement("div")
-    let img = document.createElement("img")
-    img.src=db[0][2]
-    let price=document.createElement("div")
-    if(this.id==db[0][3]){
-        price.innerText=db[0][1]
-    }
-    empy.append(imgWrap)
-    empy.append(name)
-    empy.append(price);
-    imgWrap.append(img)
-    
-    empy.setAttribute("class","used-place")
-    imgWrap.setAttribute("class","imgWrap")
-    
-       console.log(this)
-    } else { 
-        prod.splice(prod.indexOf(this.id),1); } 
+        
+           
+        } else { 
+        console.log("meored dachera")} 
         console.log(prod,"prod")
-
+        if(prod.length>0){
+            for(let i=0; i<prod.length;i++){
+                for(let j=0; j<dataBase.length; j++){
+                    if(prod[i]==(dataBase[j].id)){
+                        if(newArray.indexOf(dataBase[i]) === -1) {
+                                 newArray.push(dataBase[i])
+                         } 
+                }
+                }
+          
+            }
+         }
+         for(let k=0;k<newArray.length; k++){
+            add_card_to_taro(newArray[k].prodName,newArray[k].price, newArray[k].sourse)
+         }
+         
+         function add_card_to_taro(name,price,source) {
+             let newCard=document.createElement('div')
+             let newCardImg=document.createElement('div')
+             let newCardName=document.createElement('div')
+             let newCardPrice=document.createElement('div')
+             let newImg = document.createElement("img");
+             newImg.src = source
+             newCardName.innerText=name;
+             newCardPrice.innerText=price;
+             taroProducst.append(newCard);
+             newCard.append(newCardImg)
+             newCard.append(newCardName)
+             newCard.append(newCardPrice)
+             newCardImg.append(newImg)
+         }
+         console.log(newArray,"new array")
     });
 
-    
+ 
 
 
     const deleted_products=document.getElementById("deleted_products")
@@ -111,12 +137,7 @@ $(".card-to-add").on("click", function(){
         cardImg.append(img)
 
 
-
-
-
-
-    }
-    for(let i=0; i<10; i++){
-        addCard(db[i][0],db[i][1],db[i][2])
     }
 
+
+ 
