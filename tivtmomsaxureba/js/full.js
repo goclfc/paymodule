@@ -89,6 +89,7 @@ function add_card_to_taro(name,price,source,mater) {
     newCard.append(newCardName)
     newCard.append(newCardPrice)
     newCardImg.append(newImg)
+    
 }
 let taroProducst=document.getElementById("taro_products")
 function emptyCard(){
@@ -108,7 +109,8 @@ for (let i=0; i<10-newArray.length; i++){
     emptyCard()
 }
 
-$(".card-to-add").on("click", function(){
+$(".card-to-add").on("click", function(e){
+    e.preventDefault;
     // If the id is not already in the array, add it. If it is, remove it
     if (prod.indexOf(this.id) === -1 ) {
         prod.push(this.id); 
@@ -152,29 +154,6 @@ $(".card-to-add").on("click", function(){
     
     
 
-         function add_card_to_taro(name,price,source,mater) {
-             let newCard=document.createElement('div')
-             let delete_product=document.createElement('div')
-             let newCardImg=document.createElement('div')
-             let newCardName=document.createElement('div')
-             let newCardPrice=document.createElement('div')
-             let newImg = document.createElement("img");
-             newImg.src = source
-             newCardName.innerText=name;
-             newCardPrice.innerText=price;
-             newCard.setAttribute("class","prod-to-add")
-             newCard.setAttribute("id",mater)
-             newCardImg.setAttribute("class","prod-img-to-add")
-             newCardName.setAttribute("class","prod-name-to-add")
-             newCardPrice.setAttribute("class","prod-price-to-add")
-             delete_product.setAttribute("class", "delete-product")
-            newCard.append(delete_product)
-             taro_products.append(newCard);
-             newCard.append(newCardImg)
-             newCard.append(newCardName)
-             newCard.append(newCardPrice)
-             newCardImg.append(newImg)
-         }
       
          console.log(newArray,"new array")
     });
@@ -182,7 +161,7 @@ $(".card-to-add").on("click", function(){
  
 
 
-    const deleted_products=document.getElementById("deleted_products")
+   
     function addCard(name,price,sour){
         let card=document.createElement("div")
         let cardHeader=document.createElement("div")
@@ -211,10 +190,24 @@ $(".card-to-add").on("click", function(){
 
     }
 
-    
- 
-    $(".delete-product").on("click", function(e){
-        e.preventdefault;
+    function deletetedProds() {
+        let deleted_produc=document.getElementById("deleted_products")
+        let card=document.createElement("div")
+        let cardImg=document.createElement("div")
+        let cardName=document.createElement("div")
+        let cardPrice=document.createElement("div")
+        card.setAttribute("class","card-to-add")
+        cardImg.setAttribute("class","card-img-to-add");
+        cardName.setAttribute("class","card-name-to-add");
+        deleted_produc.append(card)
+        card.append(cardImg)
+        card.append(cardName)
+        card.append(cardPrice)
+    }
+   
+    $("body").on("click", ".delete-product", function(e){
+        e.preventDefault;
+      
         
         let prod_ids=[]
         newArray.forEach(function(el) {prod_ids.push(el.id)})
@@ -222,18 +215,19 @@ $(".card-to-add").on("click", function(){
        
       
         let parElId=parseInt(this.parentElement.id)
-        
+        let deleted_prods=[]
+        deleted_prods.push(parElId)
+        console.log(deleted_prods,"deleted prods")
         let indx=prod_ids.indexOf(parElId)
        
        newArray.splice(indx,1)
        console.log (newArray,"check")
+       deletetedProds()
        $(this).parent().fadeOut(300);
         
     
         emptyCard()
-        let deleted_produc=document.getElementById("deleted_products")
-        let delet=document.createElement('div')
-        deleted_produc.append(delet)
+       
     
-    })
-   
+  
+})
