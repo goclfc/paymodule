@@ -62,11 +62,12 @@ for (let i=0; i<dataBase.length; i++){
   available (dataBase[i].prodName,dataBase[i].price,dataBase[i].sourse);
   cardToAdd.setAttribute("id",dataBase[i].id)
 }
-let newArray=[{id:2555,prodName:"ჰეად ენდ შოლდერსი", price:"12.50", sourse:"./images/pc1.png" },
-{id:2556,prodName:"ჰეად1", price:"12.50", sourse:"./images/pc1.png" },
-{id:2557,prodName:"ჰეად2 ენდ შოლდერსი2", price:"14.50", sourse:"./images/pc1.png" },
-{id:2558, prodName:"ჰეად3 ენდ შოლდერსი", price:"11.50", sourse:"./images/pc1.png" },
-{id:2559, prodName:"ჰეად4 ენდ შოლდერსი", price:"152.50", sourse:"./images/pc1.png" },];
+let newArray=[
+    {id:2555,prodName:"ჰეად 1", price:"12.50", sourse:"./images/pc1.png" },
+    {id:2556,prodName:"ჰეად 2", price:"12.50", sourse:"./images/pc1.png" },
+    {id:2557,prodName:"ჰეად 3", price:"14.50", sourse:"./images/pc1.png" },
+    {id:2558, prodName:"ჰეად 4", price:"11.50", sourse:"./images/pc1.png" },
+    {id:2559, prodName:"ჰეად 5", price:"152.50", sourse:"./images/pc1.png" },];
 function add_card_to_taro(name,price,source,mater) {
     let newCard=document.createElement('div')
     let newCardImg=document.createElement('div')
@@ -190,19 +191,29 @@ $(".card-to-add").on("click", function(e){
 
     }
 
-    function deletetedProds() {
+    function deletetedProds(name,price,sour) {
         let deleted_produc=document.getElementById("deleted_products")
         let card=document.createElement("div")
         let cardImg=document.createElement("div")
         let cardName=document.createElement("div")
         let cardPrice=document.createElement("div")
+        let img=document.createElement("img")
+        let bb=document.createElement("div")
         card.setAttribute("class","card-to-add")
         cardImg.setAttribute("class","card-img-to-add");
         cardName.setAttribute("class","card-name-to-add");
+        cardPrice.setAttribute("class","card-price-to-add")
         deleted_produc.append(card)
+        bb.setAttribute("class","bring-back")
+        bb.innerText="აღდგენა"
+        img.src=sour
+        cardName.innerText=name
+        cardPrice.innerText=price
         card.append(cardImg)
         card.append(cardName)
         card.append(cardPrice)
+        card.append(bb)
+        cardImg.append(img)
     }
    
     $("body").on("click", ".delete-product", function(e){
@@ -219,15 +230,12 @@ $(".card-to-add").on("click", function(e){
         deleted_prods.push(parElId)
         console.log(deleted_prods,"deleted prods")
         let indx=prod_ids.indexOf(parElId)
-       
-       newArray.splice(indx,1)
-       console.log (newArray,"check")
-       deletetedProds()
-       $(this).parent().fadeOut(300);
-        
-    
+        deletetedProds(newArray[indx].prodName,newArray[indx].price,newArray[indx].sourse)
+        console.log (newArray,"newArray before")
+        $(this).parent().fadeOut(300);
         emptyCard()
-       
+       newArray.splice(indx,1)
+       console.log (newArray,"new Aray after")
     
   
 })
